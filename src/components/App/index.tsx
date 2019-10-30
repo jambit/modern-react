@@ -1,12 +1,14 @@
 import React from 'react';
 import Stateful from '../Stateful';
 import NotRedux from '../NotRedux';
-import Contextual from '../Contextual';
+import Contextual, { MyContext } from '../Contextual';
 
 export default () => (
     <div>
         <Stateful />
         <NotRedux />
-        <Contextual />
+        <MyContext.Provider value="someOtherValue">
+            <Contextual />
+        </MyContext.Provider>
     </div>
 );
