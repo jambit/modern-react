@@ -1,7 +1,8 @@
 import React from 'react';
+import Stateful from '../Stateful';
 
 export default () => (
     <div>
-        Hello World
+        <Stateful />
     </div>
 );
