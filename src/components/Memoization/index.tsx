@@ -1,17 +1,18 @@
-import React, { useCallback, useState, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
+import useInput from '../../hooks/useInput';
 
 export default () => {
-    const [a, setA] = useState('0');
-    const [b, setB] = useState('0');
+    const [a, onChangeA] = useInput('0');
+    const [b, onChangeB] = useInput('0');
     const sum = useMemo(() => parseFloat(a) + parseFloat(b), [a, b]);
     const onClick = useCallback(() => {
         alert(`Value: ${sum}`);
     }, [sum]);
     return (
         <div>
-            <input onChange={(e) => setA(e.target.value)} value={a} />
+            <input onChange={onChangeA} value={a} />
             +
-            <input onChange={(e) => setB(e.target.value)} value={b} />
+            <input onChange={onChangeB} value={b} />
             =
             {sum}
             <button onClick={onClick}>Send</button>
