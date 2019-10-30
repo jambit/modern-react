@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import useToggle from '../../hooks/useToggle';
 
 export default () => {
     const [originalTitle] = useState(document.title);
-    const [value, setValue] = useState(false);
+    const [value, toggleValue] = useToggle(false);
     useEffect(() => {
         const element = document.getElementById('effect');
         element.textContent = new Date().toISOString();
@@ -14,7 +15,7 @@ export default () => {
     return (
         <span>
             <span id="effect">Some Effect</span>
-            <button onClick={() => setValue(!value)}>{value ? 'Foo' : 'Bar'}</button>
+            <button onClick={toggleValue}>{value ? 'Foo' : 'Bar'}</button>
         </span>
     );
 }
