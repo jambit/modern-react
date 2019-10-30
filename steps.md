@@ -2,11 +2,19 @@
   - useState
   - useReducer
 - Effect Hooks
-  - useEffect / useLayoutEffect
+  - useEffect
+    - simple
+    - with dependency
+    - what is useLayoutEffect?
 - createContext & useContext
+  - default value
+  - context provider
 - Memoization
-  - useCallback
   - UseMemo
+  - useCallback
 - References
-  - useRef
+  - useRef element
+  - useRef counter
 - Custom Hooks
+  - useToggle
+  - useInput
