@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Effectful from '../Effectful';
 
 export default () => {
     const [open, setOpen] = useState(true);
@@ -11,6 +12,7 @@ export default () => {
                 <div>
                     <label><input value={name} onChange={(e) => setName(e.target.value)} /></label>
                     <label><input value={surname} onChange={(e) => setSurname(e.target.value)} /></label>
+                    <Effectful />
                 </div>
             )}
         </div>
