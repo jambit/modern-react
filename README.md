@@ -1,6 +1,6 @@
 # Modern React Build-Setup
 
-This is the code shown during the [Modern React with Hooks](https://www.meetup.com/software-enthusiasts/) live coding presentation.
+This is the code shown during the [Modern React with Hooks](https://www.meetup.com/software-enthusiasts/events/266254630/) live coding presentation.
 
 It is part of a presentation series:
 1. **[Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)**
