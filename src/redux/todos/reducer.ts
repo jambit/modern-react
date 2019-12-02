@@ -1,5 +1,5 @@
 import { createReducer } from 'deox';
-import { addTodo } from './actions';
+import { addTodo, setTodoChecked } from './actions';
 
 
 interface TodoEntry {
@@ -20,5 +20,14 @@ export const todosReducer = createReducer(initialState, (handleAction) => [
         ...state,
         list: [...state.list, { id: state.nextId, label: action.payload.label, checked: false }],
         nextId: state.nextId + 1,
-    }))
+    })),
+    handleAction(setTodoChecked, (state, action) => ({
+        ...state,
+        list: state.list.map((todo) => {
+            if (todo.id === action.payload.id) {
+                return { ...todo, checked: action.payload.checked };
+            }
+            return todo;
+        })
+    })),
 ]);

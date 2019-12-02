@@ -22,7 +22,7 @@ export default () => {
 
     return (
         <ul className="todo-list">
-            {todos.map((todo) => <TodoListEntry label={todo.label} checked={todo.checked} key={todo.id} />)}
+            {todos.map((todo) => <TodoListEntry label={todo.label} checked={todo.checked} key={todo.id} id={todo.id} />)}
             <li className="todo-list-new-entry"><input ref={input} placeholder="Add a new entry" onKeyDown={onKeyDown} /><button onClick={onAddTodo}>+</button></li>
         </ul>
     );
