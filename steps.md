@@ -1,0 +1,10 @@
+- npm i -D redux react-redux deox @types/react-redux ts-keycode-enum
+- wrap app with provider
+- createStore function
+- initialstate, todo state, reducer, add to createStore
+- root state definition
+- selectors + barrel file
+- use selector
+- create add action
+- create set checked action
+- create remove action
