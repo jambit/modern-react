@@ -1,5 +1,5 @@
 import { createReducer } from 'deox';
-import { addTodo, setTodoChecked } from './actions';
+import { addTodo, setTodoChecked, removeTodo } from './actions';
 
 
 interface TodoEntry {
@@ -30,4 +30,8 @@ export const todosReducer = createReducer(initialState, (handleAction) => [
             return todo;
         })
     })),
+    handleAction(removeTodo, (state, action) => ({
+        ...state,
+        list: state.list.filter((todo) => todo.id !== action.payload.id),
+    }))
 ]);
