@@ -6,8 +6,8 @@ The [recording](https://www.youtube.com/watch?v=PDcXzo1Edf0) is available on our
 
 It is part of a presentation series:
 1. **[Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)**
-2. **[Modern React with Hooks](https://github.com/jambit/modern-react/tree/02-hooks)**
-3. Modern React State-Management (TBD)
+2. [Modern React with Hooks](https://github.com/jambit/modern-react/tree/02-hooks)
+3. [Modern React State-Management](https://github.com/jambit/modern-react/tree/03-state-management)
 4. Modern React Side-Effects (TBD)
 5. Modern React Modularization (TBD)
 6. Modern React Testing (TBD)
