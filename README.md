@@ -6,9 +6,9 @@ These meetup events happen in two meetups in rotation:
 - [software enthusiasts](https://www.meetup.com/software-enthusiasts/)
 
 The full list of code-branches:
-1. **[Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)**
-2. **[Modern React with Hooks](https://github.com/jambit/modern-react/tree/02-hooks)**
-3. Modern React State-Management (TBD)
+1. [Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)
+2. [Modern React with Hooks](https://github.com/jambit/modern-react/tree/02-hooks)
+3. [Modern React State-Management](https://github.com/jambit/modern-react/tree/03-state-management)
 4. Modern React Side-Effects (TBD)
 5. Modern React Modularization (TBD)
 6. Modern React Testing (TBD)
