@@ -1,0 +1,10 @@
+- add api.ts, simulating a server storage by using localStorage.
+- add session reducer, with an initial state containing the default token.
+- npm i -D regenerator-runtime redux-saga
+- import 'regenerator-runtime/runtime'
+- add saga middleware, run root saga
+- create todosSaga, calling fetchTodosSaga
+- make addTodo asynchronous and remove nextId from TodoState
+- make setTodoChecked asynchronous
+- make removeTodo asynchronous
+- subscribe to storage event

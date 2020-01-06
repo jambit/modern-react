@@ -1,0 +1,29 @@
+{
+  "name": "04-side-effects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "rimraf dist && tsc && parcel build src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-redux": "^7.1.5",
+    "deox": "^3.2.0",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "sass": "^1.23.7",
+    "ts-keycode-enum": "^1.0.6",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.3"
+  }
+}
