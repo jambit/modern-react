@@ -1,5 +1,5 @@
 import {
-    put, all, select, call, takeLatest, cancelled, takeEvery
+    put, all, select, call, takeLatest, cancelled, takeEvery, take
 } from 'redux-saga/effects';
 
 import { api } from '../../api';
@@ -20,6 +20,7 @@ import {
 } from './actions';
 import { TodoEntry } from './reducer';
 import { selectToken } from '../session';
+import { EventChannel, eventChannel } from 'redux-saga';
 
 export default function* todoSaga() {
     yield all([
@@ -27,6 +28,7 @@ export default function* todoSaga() {
         takeEvery(SET_TODO_CHECKED_START, setTodoCheckedSaga),
         takeEvery(REMOVE_TODO_START, removeTodoSaga),
         fetchTodosSaga(),
+        subscribeToUpdatesSaga(),
     ]);
 }
 
@@ -71,5 +73,23 @@ export function* removeTodoSaga(action: ReturnType<typeof removeTodoStart>) {
         yield put(removeTodoSuccess(action.payload.id));
     } catch (e) {
         yield put(removeTodoFailure(action.payload.id));
+    }
+}
+
+function subscribeToStorage(emit: (event: StorageEvent) => void) {
+    window.addEventListener('storage', emit);
+    return () => window.removeEventListener('storage', emit);
+}
+
+function* subscribeToUpdatesSaga() {
+    const channel: EventChannel<StorageEvent> = yield call(eventChannel, subscribeToStorage);
+    try {
+        while (true) {
+            // return value ignored in this sample
+            const event: StorageEvent = yield take(channel);
+            yield call(fetchTodosSaga);
+        }
+    } catch (e) {
+        channel.close();
     }
 }
