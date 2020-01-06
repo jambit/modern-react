@@ -1,5 +1,5 @@
 import { createReducer } from "deox";
-import { addTodo, setTodoChecked, removeTodo, loadTodos } from "./actions";
+import { addTodoSuccess, setTodoChecked, removeTodo, loadTodos } from "./actions";
 
 export interface TodoEntry {
     id: number;
@@ -9,7 +9,6 @@ export interface TodoEntry {
 
 const initialState = {
     list: [] as TodoEntry[],
-    nextId: 1,
 };
 
 export type TodoState = typeof initialState;
@@ -19,10 +18,9 @@ export const todosReducer = createReducer(initialState, (handleAction) => [
         ...state,
         list: action.payload.items
     })),
-    handleAction(addTodo, (state, action) => ({
+    handleAction(addTodoSuccess, (state, action) => ({
         ...state,
-        list: [...state.list, { id: state.nextId, label: action.payload.label, checked: false }],
-        nextId: state.nextId + 1,
+        list: [...state.list, action.payload.item],
     })),
     handleAction(setTodoChecked, (state, action) => ({
         ...state,

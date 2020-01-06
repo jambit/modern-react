@@ -5,14 +5,14 @@ import TodoListEntry from './TodoListEntry';
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTodos } from '../../redux/todos/selectors';
-import { addTodo } from '../../redux/todos/actions';
+import { addTodoStart } from '../../redux/todos/actions';
 
 export default () => {
     const todos = useSelector(selectTodos);
     const dispatch = useDispatch();
     const input = useRef<HTMLInputElement>();
     const submitTodo = () => {
-        dispatch(addTodo(input.current.value));
+        dispatch(addTodoStart(input.current.value));
         input.current.value = '';
     };
     const onKeyDown = (e: KeyboardEvent) => {
