@@ -1,5 +1,5 @@
 import { createReducer } from "deox";
-import { addTodoSuccess, setTodoCheckedSuccess, removeTodo, loadTodos } from "./actions";
+import { addTodoSuccess, setTodoCheckedSuccess, removeTodoSuccess, loadTodos } from "./actions";
 
 export interface TodoEntry {
     id: number;
@@ -34,7 +34,7 @@ export const todosReducer = createReducer(initialState, (handleAction) => [
             return entry;
         })
     })),
-    handleAction(removeTodo, (state, action) => ({
+    handleAction(removeTodoSuccess, (state, action) => ({
         ...state,
         list: state.list.filter((entry) => entry.id !== action.payload.id)
     }))

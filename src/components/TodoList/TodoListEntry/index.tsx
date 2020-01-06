@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import './style.scss';
 import { useDispatch } from 'react-redux';
-import { setTodoCheckedStart, removeTodo } from '../../../redux/todos/actions';
+import { setTodoCheckedStart, removeTodoStart } from '../../../redux/todos/actions';
 
 interface TodoListEntryProps {
     id: number;
@@ -13,7 +13,7 @@ export default({ id, label, checked }: TodoListEntryProps) => {
     const dispatch = useDispatch();
     const onClick = () => dispatch(setTodoCheckedStart(id, !checked));
     const onRemoveClick = (e: MouseEvent) => {
-        dispatch(removeTodo(id));
+        dispatch(removeTodoStart(id));
         e.preventDefault();
         e.stopPropagation();
     };

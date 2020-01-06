@@ -6,6 +6,7 @@ import { api } from '../../api';
 import {
     ADD_TODO_START,
     SET_TODO_CHECKED_START,
+    REMOVE_TODO_START,
     loadTodos,
     addTodoStart,
     addTodoSuccess,
@@ -13,6 +14,9 @@ import {
     setTodoCheckedStart,
     setTodoCheckedSuccess,
     setTodoCheckedFailure,
+    removeTodoStart,
+    removeTodoSuccess,
+    removeTodoFailure,
 } from './actions';
 import { TodoEntry } from './reducer';
 import { selectToken } from '../session';
@@ -21,6 +25,7 @@ export default function* todoSaga() {
     yield all([
         takeLatest(ADD_TODO_START, addTodoSaga),
         takeEvery(SET_TODO_CHECKED_START, setTodoCheckedSaga),
+        takeEvery(REMOVE_TODO_START, removeTodoSaga),
         fetchTodosSaga(),
     ]);
 }
@@ -56,5 +61,15 @@ export function* setTodoCheckedSaga(action: ReturnType<typeof setTodoCheckedStar
         yield put(setTodoCheckedSuccess(action.payload.id, action.payload.checked));
     } catch (e) {
         yield put(setTodoCheckedFailure(action.payload.id, action.payload.checked));
+    }
+}
+
+export function* removeTodoSaga(action: ReturnType<typeof removeTodoStart>) {
+    try {
+        const token: string = yield select(selectToken);
+        yield call(api.removeTodo, token, action.payload.id);
+        yield put(removeTodoSuccess(action.payload.id));
+    } catch (e) {
+        yield put(removeTodoFailure(action.payload.id));
     }
 }
