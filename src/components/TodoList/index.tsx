@@ -1,15 +1,13 @@
 import React, { useRef, KeyboardEvent } from 'react';
 import { Key } from 'ts-keycode-enum';
-import { DynamicModuleLoader } from 'redux-dynamic-modules';
 import { useSelector, useDispatch } from 'react-redux';
 
 import TodoListEntry from './TodoListEntry';
 import './style.scss';
 import { selectTodos } from '../../redux/todo/todos/selectors';
 import { addTodoStart } from '../../redux/todo/todos/actions';
-import todoModule from '../../redux/todo/module';
-
-// 2. Introduce LazyDynamicModuleLoader
+import LazyDynamicModuleLoader from '../LazyDynamicModuleLoader';
+import Loading from '../Loading';
 
 const TodoList = () => {
     const todos = useSelector(selectTodos);
@@ -32,7 +30,7 @@ const TodoList = () => {
 };
 
 export default () => (
-    <DynamicModuleLoader modules={[todoModule()]}>
+    <LazyDynamicModuleLoader imports={[() => import('../../redux/todo/module')]} loading={<Loading />}>
         <TodoList />
-    </DynamicModuleLoader>
+    </LazyDynamicModuleLoader>
 );
