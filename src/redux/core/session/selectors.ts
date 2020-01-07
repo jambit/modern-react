@@ -1,3 +1,3 @@
-import { RootState } from "../state";
+import { CoreModuleState } from "../state";
 
-export const selectToken = (state: RootState) => state.session.token;
+export const selectToken = (state: CoreModuleState) => state.core.session.token;

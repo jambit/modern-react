@@ -1,3 +1,3 @@
-import { RootState } from "../state";
+import { CoreModuleState } from "../state";
 
-export const selectTodos = (state: RootState) => state.todos.list;
+export const selectTodos = (state: CoreModuleState) => state.core.todos.list;
