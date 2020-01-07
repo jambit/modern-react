@@ -4,8 +4,8 @@ import { Key } from 'ts-keycode-enum';
 import TodoListEntry from './TodoListEntry';
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTodos } from '../../redux/core/todos/selectors';
-import { addTodoStart } from '../../redux/core/todos/actions';
+import { selectTodos } from '../../redux/todo/todos/selectors';
+import { addTodoStart } from '../../redux/todo/todos/actions';
 
 // 1. Add DynamidModuleLoader to default export
 // 2. Introduce LazyDynamicModuleLoader

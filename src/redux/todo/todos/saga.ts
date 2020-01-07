@@ -19,7 +19,7 @@ import {
     removeTodoFailure,
 } from './actions';
 import { TodoEntry } from './reducer';
-import { selectToken } from '../session';
+import { selectToken } from '../../core/session';
 import { EventChannel, eventChannel } from 'redux-saga';
 
 export default function* todoSaga() {

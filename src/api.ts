@@ -1,4 +1,4 @@
-import { TodoEntry } from './redux/core/todos/reducer';
+import { TodoEntry } from './redux/todo/todos/reducer';
 
 export const DEFAULT_TOKEN = 'asdakjdsl2983lasdk';
 
