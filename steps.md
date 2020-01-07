@@ -1,0 +1,12 @@
+- npm i -D react-router-ts
+- Add router
+- Add routes / & /todo with links to eachother
+- Make TodoList load lazy => Suspense & Loading component
+- npm i -D redux-dynamic-modules redux-dynamic-modules-saga
+- Refactor into /core folder, refactor RootState to CoreModuleState
+- Create Core Module, load by default
+- Split Todo Module from Core, load by default
+- Use DynamicModuleLoader for TodoModule
+- Introduce LazyDynamicModuleLoader
+- npm i -D parcel-plugin-bundle-visualiser
+- npm run build -- --no-source-maps, show results
