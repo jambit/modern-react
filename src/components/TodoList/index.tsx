@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectTodos } from '../../redux/todos/selectors';
 import { addTodoStart } from '../../redux/todos/actions';
 
+// 1. Add DynamidModuleLoader to default export
+// 2. Introduce LazyDynamicModuleLoader
+
 export default () => {
     const todos = useSelector(selectTodos);
     const dispatch = useDispatch();
