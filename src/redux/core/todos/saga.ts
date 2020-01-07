@@ -2,7 +2,7 @@ import {
     put, all, select, call, takeLatest, cancelled, takeEvery, take
 } from 'redux-saga/effects';
 
-import { api } from '../../api';
+import { api } from '../../../api';
 import {
     ADD_TODO_START,
     SET_TODO_CHECKED_START,

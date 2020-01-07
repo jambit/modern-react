@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import './style.scss';
 import { useDispatch } from 'react-redux';
-import { setTodoCheckedStart, removeTodoStart } from '../../../redux/todos/actions';
+import { setTodoCheckedStart, removeTodoStart } from '../../../redux/core/todos/actions';
 
 interface TodoListEntryProps {
     id: number;
