@@ -1,8 +1,7 @@
 import React from 'react';
 import TodoList from '../TodoList';
-import { Router } from 'react-router-ts';
+import { Router, Route, Link } from 'react-router-ts';
 
-// 3. Add 2 routes / and /todo with links to eachother
 // 4. make TodoList load Lazily (Suspense + Loading)
 
 function routeMatcherFactory(pattern: string) {
@@ -12,8 +11,15 @@ function routeMatcherFactory(pattern: string) {
 export default () => (
     <div>
         <Router routeMatcherFactory={routeMatcherFactory}>
-            <h2>GRINCH TO DO LIST</h2>
-            <TodoList />
+            <Route path="/todo">
+                <h2>GRINCH TO DO LIST</h2>
+                <TodoList />
+                <Link href="/">Home</Link>
+            </Route>
+            <Route path="/">
+                <h2>Modern React</h2>
+                <Link href="/todo">Todo List</Link>
+            </Route>
         </Router>
     </div>
 );
