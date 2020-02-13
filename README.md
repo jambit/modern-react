@@ -2,7 +2,7 @@
 
 This is the code shown during the [Modern React Modularization](https://www.meetup.com/ReactJS-Meetup-Leipzig/events/266283185/) live coding presentation.
 
-The [recording](#) will be available on our [YouTube channel](https://www.youtube.com/channel/UCUzXSmEvF3VEf_TV9q6oAhw) soon after the event itself..
+The [recording](https://www.youtube.com/watch?v=-jc_8Mg6QBA) is available on our [YouTube channel](https://www.youtube.com/channel/UCUzXSmEvF3VEf_TV9q6oAhw).
 
 It is part of a presentation series:
 1. [Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)
