@@ -1,4 +1,4 @@
-# Modern React Build-Setup
+# Modern React State-Management
 
 This is the code shown during the [Modern React State Management](https://www.meetup.com/ReactJS-Meetup-Leipzig/events/266283070/) live coding presentation.
 
