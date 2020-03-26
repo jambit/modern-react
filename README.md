@@ -1,4 +1,4 @@
-# Modern React Build-Setup
+# Modern React Hooks
 
 This is the code shown during the [Modern React with Hooks](https://www.meetup.com/software-enthusiasts/events/266254630/) live coding presentation.
 
