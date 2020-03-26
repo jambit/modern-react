@@ -1,4 +1,4 @@
-# Modern React Build-Setup
+# Modern React Side-Effects
 
 This is the code shown during the [Modern React Side-Effects](https://www.meetup.com/software-enthusiasts/events/267315351/) live coding presentation.
 
