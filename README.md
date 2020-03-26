@@ -1,4 +1,4 @@
-# Modern React Build-Setup
+# Modern React Modularization
 
 This is the code shown during the [Modern React Modularization](https://www.meetup.com/ReactJS-Meetup-Leipzig/events/266283185/) live coding presentation.
 
