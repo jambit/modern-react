@@ -1,7 +1,7 @@
 # Modern React Live-Coding
 
-Here you will find the code shown during the **Modern React** Live-Coding series.
-These meetup events happen in two meetups in rotation:
+Here you can find the code shown during the **Modern React** Live-Coding series.
+These meetup events happened in two meetups in rotation:
 - [ReactJS Meetup Leipzig](https://www.meetup.com/ReactJS-Meetup-Leipzig/)
 - [software enthusiasts](https://www.meetup.com/software-enthusiasts/)
 
