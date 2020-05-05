@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todos reducer setTodoCheckedSuccess appends an item to the list 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "checked": false,
+      "id": 10,
+      "label": "Run errands",
+    },
+    Object {
+      "checked": false,
+      "id": 12,
+      "label": "Solve Puzzle",
+    },
+  ],
+}
+`;
