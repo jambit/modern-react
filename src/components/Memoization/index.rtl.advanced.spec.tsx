@@ -41,6 +41,7 @@ describe('<Memoization>', () => {
 
         fireEvent.click(button);
         expect(spy).toHaveBeenCalledWith('Value: 42');
+        expect(spy).toHaveBeenCalledTimes(1);
     });
 
     // show enzyme advanced next

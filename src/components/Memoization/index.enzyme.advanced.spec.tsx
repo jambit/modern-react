@@ -59,5 +59,6 @@ describe('<Memoization>', () => {
         expect(spy).toHaveBeenCalledWith('Value: 42');
     });
 
+    // talk about take aways
     // show useInput hook next
 });

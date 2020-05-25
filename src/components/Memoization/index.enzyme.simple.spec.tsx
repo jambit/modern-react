@@ -10,6 +10,7 @@ describe('<Memoization>', () => {
     });
 
     it('has the right title', () => {
+        // Returns wrapper
         const title = wrapper.find(Title);
 
         expect(title.text()).toBe('Calculator');

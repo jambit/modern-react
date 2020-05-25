@@ -2,7 +2,7 @@
 
 This is the code shown during the [Modern React Testing](https://www.meetup.com/software-enthusiasts/events/270458154/) live coding presentation.
 
-The [recording](#) will be available available on our [YouTube channel](https://www.youtube.com/channel/UCUzXSmEvF3VEf_TV9q6oAhw) soon after the event.
+The [recording](https://www.youtube.com/watch?v=66FBJZWVCwQ) is available available on our [YouTube channel](https://www.youtube.com/channel/UCUzXSmEvF3VEf_TV9q6oAhw).
 
 It is part of a presentation series:
 1. [Modern React Build-Setup](https://github.com/jambit/modern-react/tree/01-build-setup)

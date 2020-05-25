@@ -9,6 +9,7 @@ describe('<Memoization>', () => {
     });
 
     it('has the right title', () => {
+        // Returns HTMLElement:
         const title = screen.getByRole('heading');
 
         // show other RTL toHave*
