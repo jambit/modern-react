@@ -1,4 +1,12 @@
 import React from 'react';
-import Memoization from '../Memoization';
+import TodoList from '../TodoList';
 
-export default () => <Memoization />;
+export default () => {
+
+    return (
+        <div>
+            <h2>GRINCH TO DO LIST</h2>
+            <TodoList />
+        </div>
+    );
+}
