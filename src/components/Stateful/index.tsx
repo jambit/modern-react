@@ -7,12 +7,8 @@ export default () => {
         <div>
             <h2>Show block</h2>
             <div>
-                <label>
-                    <input value={name} />
-                </label>
-                <label>
-                    <input value={surname} />
-                </label>
+                <input value={name} />
+                <input value={surname} />
             </div>
         </div>
     );
