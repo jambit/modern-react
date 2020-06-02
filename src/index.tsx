@@ -1,12 +1,7 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import 'typeface-open-sans';
 
-const DynamicApp = React.lazy(() => import('./components/App/index'));
+import App from './components/App';
+import './style.scss';
 
-ReactDOM.render(
-    <Suspense fallback={<div>loading..</div>}>
-        <DynamicApp />
-    </Suspense>,
-    document.getElementById('app'),
-);
+ReactDOM.render(<App />, document.getElementById('app'));
