@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default () => {
+    const counter = useRef(0);
+    const ref = useRef<HTMLDivElement>();
+    useEffect(() => {
+        ref.current.textContent = 'Gotcha';
+    }, []);
     return (
         <div>
-            Ref: <span />
-            Counter: <span></span>
-            <button>Add</button>
-            <button>Set</button>
+            Ref: <span ref={ref} />
+            Counter: <span>{counter.current}</span>
+            <button onClick={() => (counter.current += 1)}>Add</button>
+            <button onClick={() => (ref.current.textContent = counter.current.toString())}>
+                Set
+            </button>
         </div>
     );
 };
