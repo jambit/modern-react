@@ -1,9 +1,11 @@
 import React, { useReducer } from 'react';
 
-interface MyState {
-    foo: number;
-    bar: string;
-}
+const initialState = {
+    foo: 0,
+    bar: '',
+};
+
+type MyState = typeof initialState;
 
 interface MyAddAction {
     type: 'add';
@@ -34,18 +36,22 @@ function stateReducer(state: MyState, action: MyAction) {
                 bar: `Hello ${action.value}`,
             };
         case 'clear':
-            return { foo: 0, bar: '' };
+            return initialState;
     }
     return state;
 }
 
 export default () => {
-    const [state, dispatch] = useReducer(stateReducer, { foo: 0, bar: '' });
+    const [state, dispatch] = useReducer(stateReducer, initialState);
     return (
         <div>
-            <button onClick={() => dispatch({ type: 'add', value: 42 })}>Add</button>
+            <button onClick={() => dispatch({ type: 'add', value: 42 })}>
+                Add
+            </button>
             {state.foo}
-            <button onClick={() => dispatch({ type: 'greet', value: 'Mary' })}>Greet</button>
+            <button onClick={() => dispatch({ type: 'greet', value: 'Mary' })}>
+                Greet
+            </button>
             {state.bar}
             <button onClick={() => dispatch({ type: 'clear' })}>Clear</button>
         </div>
