@@ -11,6 +11,7 @@
 - Production Build
   - npm i rimraf
   - create build script: "rimraf dist && tsc && parcel build src/index.html"
+  - talk about production build
 - Asset imports:
   - switch to scss
   - import yaml from tsx
