@@ -51,6 +51,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
             const Fallback = this.props.fallback;
             return <Fallback retry={this.retry} />;
         }
+
+        // We use this helper component, since it would break this error-boundary
+        // if we rendered it directly here and the render function threw an error.
         return <RenderComponent render={this.props.render} />;
     }
 
