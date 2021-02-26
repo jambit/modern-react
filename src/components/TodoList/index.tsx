@@ -1,40 +1,39 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
-import TodoListEntry from './TodoListEntry';
+import { TodoListEntry } from './TodoListEntry';
 import './style.scss';
+import { TodoContext } from '../../mobx/TodoListState';
+import { observer } from 'mobx-react-lite';
 
-interface TodoItem {
-    id: number;
-    label: string;
-    checked: boolean;
-}
-
-const initialState = {
-    nextId: 0,
-    items: [] as TodoItem[],
-};
-
-type TodoState = typeof initialState;
-
-export default () => {
+export const TodoList = observer(() => {
+    const [label, setLabel] = useState('');
+    const todos = useContext(TodoContext);
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         e.stopPropagation();
+        todos.add(label);
+        setLabel('');
     };
     return (
-        <ul className="todo-list">
-            <TodoListEntry label="Make cookies" checked={false} />
-            <TodoListEntry label="Go to Christmas party" checked={false} />
-            <TodoListEntry label="Wish everyone a merry Christmas" checked={false} />
-            <TodoListEntry label="Dress up like Santa" checked />
-            <TodoListEntry label="Ignore 1-3" checked />
-            <TodoListEntry label="Steal Christmas" checked />
+        <ul className='todo-list'>
+            {todos.items.map((item) => (
+                <TodoListEntry
+                    item={item}
+                    removeItem={todos.remove}
+                    key={item.id}
+                />
+            ))}
             <li>
-                <form className="todo-list-form" onSubmit={onSubmit}>
-                    <input className="todo-list-new-entry" placeholder="Add a new entry..." />
+                <form className='todo-list-form' onSubmit={onSubmit}>
+                    <input
+                        className='todo-list-new-entry'
+                        placeholder='Add a new entry...'
+                        value={label}
+                        onChange={(e) => setLabel(e.target.value)}
+                    />
                     <button>+</button>
                 </form>
             </li>
         </ul>
     );
-};
+});
