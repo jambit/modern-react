@@ -3,19 +3,6 @@ import React from 'react';
 import TodoListEntry from './TodoListEntry';
 import './style.scss';
 
-interface TodoItem {
-    id: number;
-    label: string;
-    checked: boolean;
-}
-
-const initialState = {
-    nextId: 0,
-    items: [] as TodoItem[],
-};
-
-type TodoState = typeof initialState;
-
 export default () => {
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
