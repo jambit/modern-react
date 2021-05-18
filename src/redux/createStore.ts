@@ -3,8 +3,19 @@ import {
     combineReducers,
     configureStore,
 } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
+import { all } from 'redux-saga/effects';
 import { sessionReducer } from './session/reducer';
 import { todosReducer } from './todos/reducer';
+import todoSaga from './todos/saga';
+
+
+function* rootSaga() {
+    yield all([
+        todoSaga()
+    ]);
+}
+
 
 const reducer = combineReducers({
     session: sessionReducer,
@@ -12,9 +23,15 @@ const reducer = combineReducers({
 });
 
 export function createStore() {
-    return configureStore({
+    const sagaMiddleware = createSagaMiddleware();
+    const store = configureStore({
+        middleware: [
+            sagaMiddleware
+        ],
         reducer,
     });
+    sagaMiddleware.run(rootSaga);
+    return store;
 }
 
 type InferState<T> = T extends (...args: any[]) => CombinedState<infer S>
