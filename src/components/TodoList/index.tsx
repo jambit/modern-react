@@ -3,9 +3,15 @@ import React, { useState } from 'react';
 import TodoListEntry from './TodoListEntry';
 import './style.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo, selectTodos, toggleTodo } from '../../redux';
+import todosModule, {
+    addTodo,
+    removeTodo,
+    selectTodos,
+    toggleTodo,
+} from '../../redux/todos';
+import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
 
-export default () => {
+const TodoList = () => {
     const dispatch = useDispatch();
     const todos = useSelector(selectTodos);
     const [input, setInput] = useState('');
@@ -40,3 +46,9 @@ export default () => {
         </ul>
     );
 };
+
+export default () => (
+    <DynamicModuleLoader modules={[todosModule()]}>
+        <TodoList />
+    </DynamicModuleLoader>
+);
