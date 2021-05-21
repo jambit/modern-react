@@ -20,8 +20,8 @@ export default function* todoSaga() {
         takeLatest(addTodo.start, addTodoSaga),
         takeEvery(setTodoChecked.start, setTodoCheckedSaga),
         takeEvery(removeTodo.start, removeTodoSaga),
-        fetchTodosSaga(),
-        subscribeToUpdateSaga(),
+        call(fetchTodosSaga),
+        call(subscribeToUpdateSaga),
     ]);
 }
 
@@ -46,7 +46,7 @@ export function* addTodoSaga(action: ReturnType<typeof addTodo.start>) {
         );
         yield put(addTodo.success(result));
     } catch (e) {
-        yield put(addTodo.failure(action.payload.label));
+        yield put(addTodo.failure(action.payload.label, e.message));
     } finally {
         if (yield cancelled()) console.error('cancelled');
     }
