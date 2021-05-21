@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import TodoListEntry from './TodoListEntry';
 import './style.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo, selectTodos, setTodoChecked } from '../../redux';
+import { addTodo, loadTodos, removeTodo, selectTodos, setTodoChecked } from '../../redux';
 
 export default () => {
     const dispatch = useDispatch();
